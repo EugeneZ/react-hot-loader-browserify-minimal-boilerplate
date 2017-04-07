@@ -1,4 +1,4 @@
-# React Hot Loader Minimal Boilerplate
+# React Hot Loader Browserify Minimal Boilerplate
 
 Bare minimum needed to have [React Hot Loader](https://github.com/gaearon/react-hot-loader) working with
 [browserify](http://browserify.org/) and [Babel latest](https://babeljs.io/docs/plugins/preset-latest/) plugin, using
