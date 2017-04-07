@@ -1,3 +1,4 @@
+import polyfill from 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
@@ -15,6 +16,8 @@ const render = Component => {
 
 render(Root)
 
+// This is optional if your application is idempotent.
+// livereactload will rerun this whole file if this hook is not there.
 if (module.hot) {
-  module.hot.accept('./containers/Root', () => { render(Root) })
+  module.hot.onUpdate(() => { render(Root) })
 }

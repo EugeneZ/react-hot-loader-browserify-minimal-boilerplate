@@ -1,23 +1,27 @@
 {
-  "name": "react-hot-loader-minimal-boilerplate",
-  "version": "1.0.0",
+  "name": "react-hot-loader-browserify-minimal-boilerplate",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --history-api-fallback --open"
+    "dev": "concurrently \"npm run watch\" \"npm run serve\"",
+    "watch": "watchify ./src/index.js --debug -p livereactload -t babelify -o ./dist/app.js",
+    "serve": "cd dist & serve --single"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wkwiatek/react-hot-loader-minimal-boilerplate.git"
+    "url": "git+https://github.com/EugeneZ/react-hot-loader-minimal-boilerplate.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wkwiatek/react-hot-loader-minimal-boilerplate/issues"
+    "url": "https://github.com/EugeneZ/react-hot-loader-minimal-boilerplate/issues"
   },
-  "homepage": "https://github.com/wkwiatek/react-hot-loader-minimal-boilerplate#readme",
+  "homepage": "https://github.com/EugeneZ/react-hot-loader-minimal-boilerplate#readme",
   "dependencies": {
+    "babelify": "^7.3.0",
+    "concurrently": "^3.4.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
@@ -27,7 +31,11 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
+    "browserify": "^14.1.0",
+    "livereactload": "4.0.0-beta.1",
     "react-hot-loader": "^3.0.0-beta.6",
+    "serve": "^5.0.2",
+    "watchify": "^3.9.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   }
